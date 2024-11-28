@@ -1,0 +1,36 @@
+.countdown-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .countdown-circle {
+    transform: rotate(-90deg);
+  }
+  
+  .background-circle {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 10;
+  }
+  
+  .progress-circle {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 10;
+    transition: stroke 0.3s ease;
+  }
+  
+  .progress-circle.warning {
+    stroke: #ff5722;
+  }
+  
+  .time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    font-weight: bold;
+  }
+  

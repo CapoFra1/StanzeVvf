@@ -1,0 +1,62 @@
+<!-- <mat-list>
+    <ng-container *ngFor="let item of menu">
+        
+        <ng-container  *ngIf="item.subMenu === undefined">
+            <mat-list-item class="material-list-item"  *ngIf="item.title" [routerLink]="item.link" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <div class="mat-list-content" style="display: flex; align-items: center;">
+                    <mat-icon [style.color]="item.color" mat-list-icon>
+                        {{ item.icon }}
+                    </mat-icon>
+                    <div mat-line>{{ item.title }}</div>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+
+        <ng-container *ngIf="item.subMenu?.length > 0">
+            <mat-expansion-panel hidetoggle="false" ng-reflect-hide-toggle="false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="d-flex align-items-center">
+                        <mat-icon [style.color]="item.color" mat-list-icon>
+                            {{ item.icon }}
+                        </mat-icon>
+                        <span mat-line class="list-item">{{ item.title }}</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <app-menu-item [menu]="item.subMenu"></app-menu-item>
+            </mat-expansion-panel>
+        </ng-container>
+    </ng-container>
+</mat-list> -->
+<ng-container class="list" *ngFor="let item of menu; let i = index">
+  <ng-container class="list" >
+    <button mat-button [routerLink]="item.link" [ngClass]="{ active: selectedItem === i }" (click)="openSubMenu(item,i)" >
+      <mat-icon [style.color]="item.color" mat-list-icon>
+        {{ item.icon }}
+      </mat-icon>
+      {{ item.title }}
+    </button>
+  </ng-container>
+
+   <!-- <ng-container *ngIf="item.subMenu?.length > 0">
+    <button mat-button [matMenuTriggerFor]="menu">{{ item.title }}</button>
+    <mat-menu #menu="matMenu">
+      <div class="button-menu" *ngFor="let sub of item.subMenu">
+        <button mat-menu-item [routerLink]="sub.link" routerLinkActive="active">{{ sub.title }}</button>
+      </div>
+    </mat-menu>
+
+   <mat-expansion-panel hidetoggle="false" ng-reflect-hide-toggle="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="d-flex align-items-center">
+          <mat-icon [style.color]="item.color" mat-list-icon>
+            {{ item.icon }}
+          </mat-icon>
+          <span mat-line class="list-item">{{ item.title }}</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-menu-item [menu]="item.subMenu"></app-menu-item>
+    </mat-expansion-panel> 
+  </ng-container>-->
+</ng-container>

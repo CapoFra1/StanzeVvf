@@ -1,0 +1,26 @@
+<div class="container">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>LOGIN</mat-card-title>
+            <mat-card-subtitle>Gestione stanze</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
+                <mat-form-field>
+                    <mat-label>Nome Utente</mat-label>
+                    <input matInput type="text" name="username" required ngModel />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" name="password" required ngModel />
+                </mat-form-field>
+                <button mat-raised-button color="primary" [disabled]="!homeform.valid">
+                    Invio
+                </button>
+                <mat-label id="errore" *ngIf="error!=''">{{error}}</mat-label>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

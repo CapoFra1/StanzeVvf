@@ -1,0 +1,32 @@
+<app-toolbar></app-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav [opened]="opened" mode="side">
+    <mat-nav-list *ngIf="activeSubMenu?.length > 0">
+      <mat-list-item
+        *ngFor="let sub of activeSubMenu"
+        [routerLink]="sub.link"
+        routerLinkActive="active"
+      >
+        <mat-icon [style.color]="sub.color" mat-list-icon>
+          {{ sub.icon }}
+        </mat-icon>
+        {{ sub.title }}
+      </mat-list-item>
+    </mat-nav-list>
+    <p *ngIf="!activeSubMenu?.length">Nessun menu disponibile</p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <mat-drawer-container>
+    <mat-drawer mode="side" [opened]="opened">
+        <app-menu-item [menu]="menu"></app-menu-item>
+    </mat-drawer>
+
+    <mat-drawer-content [class.margin-left]="opened">
+        <p>Content</p>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container> -->

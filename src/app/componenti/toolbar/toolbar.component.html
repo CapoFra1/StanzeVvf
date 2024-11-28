@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="mat-toolbar1">
+  <div ><img id="logo" src="/assets/img/logo_new.png" alt="" /></div>
+  
+  <div ><img id="scritta" src="/assets/img/logoscritta_new.jpg" alt="" /></div>
+  <span class="spacer"> </span>
+  <div class="timer"><app-timer></app-timer></div>
+  <div>{{data_oggi | date: "dd/MM/YYYY"}}</div>
+
+</mat-toolbar >
+<mat-toolbar color="primary" class="mat-toolbar2">
+  <button mat-icon-button (click)="OpenCloseMenu()">
+    <mat-icon> {{ !openClose ? "menu" : "menu_open" }} </mat-icon>
+  </button>
+  <span class="spacer"> </span>
+  <app-menu-item [menu]="menu"></app-menu-item>
+  <span class="spacer"> </span>
+  <span class="welcome-text">Utente: {{ username }}</span>
+  <button mat-icon-button (click)="onLogout()">
+    <mat-icon> logout </mat-icon>
+  </button>
+</mat-toolbar>

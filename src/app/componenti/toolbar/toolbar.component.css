@@ -1,0 +1,29 @@
+.mat-toolbar1 {
+  background-color: #730002;
+}
+.mat-toolbar2 {
+  background-color: #0f0505dd;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.timer{
+  margin-right: 20px;
+}
+
+.welcome-text {
+  font-size: smaller;
+}
+
+#logo{
+  width: 55px;
+  margin-right: 20px;
+  position: relative;
+  top: 12px;
+}
+
+#scritta{
+  height: 64px;
+}
